@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Запчасти КАМАЗ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="КАМАЗист.ру">
+                </a>
+                <h2>Запчасти на все модели КАМАЗ</h2>
+            </div>
+            <div class="contact">
+                <p>Доставка по всей России</p>
+                <p>📞 +7 999 999-99-99</p>
+            </div>
+        </header>
+        <nav class="menu">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="about.html">О нас</a>
+            <a href="delivery.html">Доставка</a>
+        </nav>
+        <div class="content">
+            <aside class="sidebar">
+                <a href="engine.html">Двигатель</a>
+                <a href="transmission.html">Трансмиссия</a>
+                <a href="chassis.html">Ходовая часть</a>
+                <a href="electro.html">Электрооборудование</a>
+            </aside>
+            <main class="main">
+                <h2>Каталог запчастей КАМАЗ</h2>
+                <p>Выберите интересующую вас категорию запчастей в меню слева.</p>
+                <div class="catalog-content">
+                    <h3>Основные разделы каталога:</h3>
+                    <div class="catalog-grid">
+                        <div class="catalog-item">
+                            <h4>Двигатель</h4>
+                            <p>Все запчасти для двигателей КАМАЗ</p>
+                        </div>
+                        <div class="catalog-item">
+                            <h4>Трансмиссия</h4>
+                            <p>Компоненты трансмиссии КАМАЗ</p>
+                        </div>
+                        <div class="catalog-item">
+                            <h4>Ходовая часть</h4>
+                            <p>Детали ходовой части КАМАЗ</p>
+                        </div>
+                        <div class="catalog-item">
+                            <h4>Электрооборудование</h4>
+                            <p>Электрические компоненты КАМАЗ</p>
+                        </div>
+                    </div>
+                    <div class="catalog-action">
+                        <p>Чтобы уточнить наличие нужных запчастей или получить консультацию, оставьте заявку:</p>
+                        <button class="floating-request" onclick="openModal()">Оставить заявку</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="КАМАЗист.ру">
+                    <span>КАМАЗист.ру</span>
+                </div>
+                <div class="footer-description">
+                    Продажа оригинальных и аналоговых запчастей с гарантией.
+                </div>
+            </div>
+            <div class="footer-info">
+                <p>Адрес: г. Набережные Челны, ул. Примерная, д. 1</p>
+                <p>Телефон: +7 (999) 999-99-99</p>
+                <p>Email: info@kamazist.ru</p>
+                <p>WhatsApp/Telegram: +7 (999) 999-99-99</p>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2025 «Камазист». ИНН 1234567890, ОГРН 1234567890123.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для заявки -->
+    <div id="requestModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 class="modal-title">Оставить заявку</h3>
+            <form id="requestForm">
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="catalogNumber">Каталожный номер запчасти:</label>
+                    <input type="text" id="catalogNumber" name="catalogNumber">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Комментарий:</label>
+                    <textarea id="comment" name="comment"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
