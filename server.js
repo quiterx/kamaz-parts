@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const TelegramBot = require('node-telegram-bot-api');
@@ -5,11 +6,9 @@ const TelegramBot = require('node-telegram-bot-api');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Токен бота
-const bot = new TelegramBot('7992395205:AAE_HAJfx2SmWVtiQM-X_0PeSgeKehUuDZc', {polling: true});
-
-// Ваш Chat ID
-const CHAT_ID = '1653142334';
+// Используем переменные окружения для токена и chat ID
+const bot = new TelegramBot(process.env.BOT_TOKEN, {polling: true});
+const CHAT_ID = process.env.CHAT_ID;
 
 // Обработка команд бота
 bot.onText(/\/start/, (msg) => {
