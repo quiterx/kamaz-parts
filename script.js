@@ -18,11 +18,41 @@ window.onclick = function(event) {
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('requestForm');
     if (form) {
-        form.addEventListener('submit', function(e) {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            // Здесь будет логика отправки формы
-            alert('Заявка успешно отправлена!');
-            closeModal();
+            
+            try {
+                const formData = {
+                    name: document.getElementById('name').value,
+                    phone: document.getElementById('phone').value,
+                    catalogNumber: document.getElementById('catalogNumber').value,
+                    comment: document.getElementById('comment').value,
+                    pageUrl: window.location.href,
+                    pageTitle: document.title
+                };
+
+                // URL вашего сервера на хостинге (замените на актуальный после деплоя)
+                const serverUrl = 'https://your-app-name.onrender.com/send-request';
+
+                const response = await fetch(serverUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('Заявка успешно отправлена!');
+                    form.reset();
+                    closeModal();
+                } else {
+                    throw new Error('Ошибка при отправке');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже.');
+            }
         });
     }
 });
