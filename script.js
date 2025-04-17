@@ -35,15 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Accept': 'application/json'
                     },
-                    mode: 'cors',
                     body: JSON.stringify(formData)
                 });
 
-                const data = await response.json();
-
-                if (data.success) {
+                if (response.ok) {
                     alert('Заявка успешно отправлена!');
                     form.reset();
                     closeModal();
