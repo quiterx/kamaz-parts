@@ -31,10 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     pageTitle: document.title
                 };
 
-                // URL вашего сервера на хостинге (замените на актуальный после деплоя)
-                const serverUrl = 'https://your-app-name.onrender.com/send-request';
-
-                const response = await fetch(serverUrl, {
+                const response = await fetch('https://kamaz-bot.onrender.com/send-request', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
